@@ -2,22 +2,25 @@ import "./App.css";
 import Header from "./component/Header";
 import Footer from "./component/Footer";
 import FormInput from "./component/FormInput";
-import Button from "./component/Button";
+import Linklist from "./component/Linklist";
 
 function App() {
   return (
     <div>
       <div>
         <Header />
-        
       </div>
 
-   <div className="container">
+      <div className="container">
+        <div style={{width:"50%"}}>
+          <FormInput />
+        </div>
 
-<FormInput/>
-
-
-  </div>
+      <div style={{width:"48%"}}>
+            <Linklist />
+          </div>
+        
+      </div>
 
       <div>
         <Footer />

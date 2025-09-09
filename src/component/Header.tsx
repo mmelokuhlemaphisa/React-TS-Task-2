@@ -17,7 +17,7 @@ export default function Header() {
       <div>
         <nav>
           <h1>Link Vault</h1>
-          GUUU</nav>
+      </nav>
       </div>
       <div >
           <Search />

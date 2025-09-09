@@ -5,14 +5,15 @@ export default function FormInput() {
   return (
     <div
       style={{
-        width: "50%",
-        height: "50%",
+       
+        height: "",
         border: "1px solid black",
+        borderRadius:"2%",
         marginTop: "5%",
-        marginLeft: "4%",
+        marginLeft: "2%",
       }}
     >
-      <form action="#" style={{ marginTop: "6%" }}>
+      <form action="#" style={{ marginTop: "6%", height:"43vh", }}>
         <label id="url" htmlFor="url">Url:</label>
         <input
           type="text"
