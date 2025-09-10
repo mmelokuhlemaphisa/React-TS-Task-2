@@ -55,10 +55,10 @@ margin-left: 2%;
   margin-left: 3%;
   border: none;
   outline: none;
-  
   padding: 20px;
   width: 20%;
   border-radius: 30px;
+  color: white;
 }
 
 #footer{
@@ -110,3 +110,16 @@ margin-left: 2%;
      font-size: larger;
     }
 
+#footer{
+  display:flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+
+#footer a{
+  color: white;
+  
+ 
+ 
+}

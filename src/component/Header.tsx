@@ -23,13 +23,14 @@ export default function Header() {
             textDecoration: "black",
           }}
         >
-          <h1 style={{border:'1px solid black'}}>Link Vault</h1>
+          <h3 style={{border:'1px solid black'}}>Link Vault</h3>
           <a href="#">Home</a>
           <a href="#">About</a>
           <a href="#">Service</a>
-          <a href="#">contact</a>
+          <a href="#">Contact</a>
         </nav>
       </div>
+      
       <div>
         <Search />
       </div>

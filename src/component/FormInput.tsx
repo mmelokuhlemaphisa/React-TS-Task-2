@@ -16,6 +16,7 @@ export default function FormInput() {
         
       }}
     >
+      <h3 style={{textAlign:"center"}}>Add Links</h3>
       <form action="#" style={{ marginTop: "6%", height:"41vh", display:'flex', flexDirection:"column",marginLeft:"2%" }}>
         <label id="url" htmlFor="url">Url:</label>
         <input
