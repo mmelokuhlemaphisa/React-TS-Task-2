@@ -4,7 +4,8 @@ import { FaGoogle } from 'react-icons/fa6';
 
 export default function Footer() {
   return (
-    <div id="footer">
+    <div id="footer" style={{gap:"1%"}}>
+
       <a href="#">
         <FaFacebook
           className="social-icon facebook"
