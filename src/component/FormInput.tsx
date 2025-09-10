@@ -32,7 +32,7 @@ export default function FormInput() {
     setUrl("");
     setTitle("");
     setDescr("");
-     setTags("");
+    setTags("");
   };
 
   const handleDelete = (index: number) => {
@@ -44,12 +44,19 @@ export default function FormInput() {
     setUrl(item.url);
     setTitle(item.title);
     setDescr(item.descr);
-     setTags(item.tags);
+    setTags(item.tags);
     setEditIndex(index);
   };
 
   return (
-    <div style={{display:"flex", flexDirection:"row",width:"100%", gap:"10%" }}>
+    <div
+      style={{
+        display: "flex",
+        flexDirection: "row",
+        width: "100%",
+        gap: "10%",
+      }}
+    >
       <div
         style={{
           height: "",
@@ -113,7 +120,7 @@ export default function FormInput() {
           <Button name={editIndex !== null ? "Update" : "Save"} color="green" />
         </form>
       </div>
-      <div style={{ width:"50%", height:"48vh", marginTop:"6%"}}>
+      <div style={{ width: "50%", height: "48vh", marginTop: "6%" }}>
         <Linklist items={items} onEdit={handleEdit} onDelete={handleDelete} />
       </div>
     </div>
