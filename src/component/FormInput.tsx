@@ -11,16 +11,19 @@ export default function FormInput() {
         borderRadius:"2%",
         marginTop: "5%",
         marginLeft: "2%",
+        padding:"3%",
+        width:"100%"
+        
       }}
     >
-      <form action="#" style={{ marginTop: "6%", height:"43vh", }}>
+      <form action="#" style={{ marginTop: "6%", height:"41vh", display:'flex', flexDirection:"column",marginLeft:"2%" }}>
         <label id="url" htmlFor="url">Url:</label>
         <input
           type="text"
           placeholder="add or past link"
           id="url"
           required
-        />{" "}
+        />
         <br />
         <br />
         <label htmlFor="url">Title:</label>

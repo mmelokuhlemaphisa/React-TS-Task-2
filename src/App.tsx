@@ -2,7 +2,7 @@ import "./App.css";
 import Header from "./component/Header";
 import Footer from "./component/Footer";
 import FormInput from "./component/FormInput";
-import Linklist from "./component/Linklist";
+// import Linklist from "./component/Linklist";
 
 function App() {
   return (
@@ -17,7 +17,7 @@ function App() {
         </div>
 
       <div style={{width:"48%"}}>
-            <Linklist />
+            {/* <Linklist /> */}
           </div>
         
       </div>
