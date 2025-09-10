@@ -113,7 +113,7 @@ export default function FormInput() {
           <Button name={editIndex !== null ? "Update" : "Save"} color="green" />
         </form>
       </div>
-      <div style={{border:"1px solid black", width:"50%", height:"48vh", marginTop:"6%"}}>
+      <div style={{ width:"50%", height:"48vh", marginTop:"6%"}}>
         <Linklist items={items} onEdit={handleEdit} onDelete={handleDelete} />
       </div>
     </div>
