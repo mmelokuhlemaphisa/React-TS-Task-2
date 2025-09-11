@@ -14,7 +14,10 @@ export default function FormInput() {
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
 
-    if (!url || !title || !descr || !tags) return;
+    if (!url || !title || !descr || !tags) {
+      alert("Please fill in all fields before saving.");
+      return;
+    }
 
     const newItem: LinkItem = { url, title, descr, tags };
 
@@ -24,9 +27,11 @@ export default function FormInput() {
       updated[editIndex] = newItem;
       setItems(updated);
       setEditIndex(null);
+      alert("Link updated successfully!");
     } else {
       // add new
       setItems([...items, newItem]);
+      alert("Link saved successfully!");
     }
 
     setUrl("");
@@ -36,7 +41,10 @@ export default function FormInput() {
   };
 
   const handleDelete = (index: number) => {
-    setItems(items.filter((_, i) => i !== index));
+    if (window.confirm("Are you sure you want to delete this link?")) {
+      setItems(items.filter((_, i) => i !== index));
+      alert("Link delete successfully!");
+    }
   };
 
   const handleEdit = (index: number) => {

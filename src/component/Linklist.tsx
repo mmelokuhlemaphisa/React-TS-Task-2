@@ -16,8 +16,8 @@ interface LinkListProps {
 
 const LinkList: React.FC<LinkListProps> = ({ items, onEdit, onDelete }) => {
   return (
-    <div style={{ marginTop: "20px", marginLeft: "10%" }}>
-      <h3 style={{ textAlign: "center" }}>Saved Links</h3>
+    <div style={{ marginTop: "5%", marginLeft: "10%" }}>
+      <h3>Saved Links</h3>
       {items.length === 0 ? (
         <p>No items added yet.</p>
       ) : (
@@ -64,9 +64,13 @@ const LinkList: React.FC<LinkListProps> = ({ items, onEdit, onDelete }) => {
                     onClick={() => onEdit(index)}
                     style={{
                       marginRight: "5px",
-                      background: "orange",
+                      background: "grey",
                       color: "white",
                       border: "none",
+                      borderRadius:"30px",
+                      width:"100%",
+                      height:"4vh",
+
                       padding: "5px",
                       cursor: "pointer",
                     }}
@@ -79,6 +83,9 @@ const LinkList: React.FC<LinkListProps> = ({ items, onEdit, onDelete }) => {
                       background: "red",
                       color: "white",
                       border: "none",
+                      borderRadius:"30px",
+                      width:"100%",
+                      height:"4vh",
                       padding: "5px",
                       cursor: "pointer",
                     }}
