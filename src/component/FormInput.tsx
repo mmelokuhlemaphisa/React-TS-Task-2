@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import Button from "./Button";
 import Linklist from "./Linklist";
 import type { LinkItem } from "./Linklist";
-import { setItem, getItems } from "../utils/LocalStorageFunction"
+import { setItem, getItems } from "../utils/LocalStorageFunction";
 
 export default function FormInput() {
   const [url, setUrl] = useState("");
@@ -12,15 +12,14 @@ export default function FormInput() {
   const [items, setItems] = useState<LinkItem[]>([]);
   const [editIndex, setEditIndex] = useState<number | null>(null);
 
-    useEffect(() => {
-      const saved = getItems<LinkItem>("links");
-      setItems(saved);
-    }, []);
+  useEffect(() => {
+    const saved = getItems<LinkItem>("links");
+    setItems(saved);
+  }, []);
 
-    // Save whenever items change
-    useEffect(() => {
-      setItem("links", items);
-    }, [items]);
+  useEffect(() => {
+    setItem("links", items);
+  }, [items]);
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
@@ -33,14 +32,12 @@ export default function FormInput() {
     const newItem: LinkItem = { url, title, descr, tags };
 
     if (editIndex !== null) {
-      // update existing
       const updated = [...items];
       updated[editIndex] = newItem;
       setItems(updated);
       setEditIndex(null);
       alert("Link updated successfully!");
     } else {
-      // add new
       setItems([...items, newItem]);
       alert("Link saved successfully!");
     }
@@ -68,38 +65,10 @@ export default function FormInput() {
   };
 
   return (
-    <div
-      style={{
-        display: "flex",
-        flexDirection: "row",
-        width: "100%",
-        gap: "10%",
-      }}
-    >
-      <div
-        style={{
-          height: "",
-          border: "1px solid black",
-          borderRadius: "2%",
-          marginTop: "5%",
-          marginLeft: "5%",
-          padding: "3%",
-          width: "100%",
-        }}
-      >
+    <div className="forminput-container">
+      <div className="form-box">
         <h3 style={{ textAlign: "center" }}>Add Links</h3>
-
-        <form
-          onSubmit={handleSubmit}
-          style={{
-           
-            marginTop: "6%",
-            height: "41vh",
-            display: "flex",
-            flexDirection:"column",
-            marginLeft: "2%",
-          }}
-        >
+        <form onSubmit={handleSubmit} className="form-input">
           <label htmlFor="url">Url:</label>
           <input
             type="text"
@@ -131,7 +100,7 @@ export default function FormInput() {
           <label htmlFor="tags">Tags:</label>
           <input
             type="text"
-            id="descr"
+            id="tags"
             value={tags}
             onChange={(e) => setTags(e.target.value)}
             required
@@ -140,7 +109,8 @@ export default function FormInput() {
           <Button name={editIndex !== null ? "Update" : "Save"} color="green" />
         </form>
       </div>
-      <div style={{ width: "100%", height: "48vh", marginTop: "6%" }}>
+
+      <div className="list-box">
         <Linklist items={items} onEdit={handleEdit} onDelete={handleDelete} />
       </div>
     </div>
