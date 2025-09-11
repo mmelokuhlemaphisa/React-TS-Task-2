@@ -1,23 +1,29 @@
-import { useState, useEffect } from "react";
+export function setItem(key: string, value: any) {
+  try {
+    window.localStorage.setItem(key, JSON.stringify(value));
+  } catch (error) {
+    alert("Error saving to localStorage: " + error);
+  }
+}
 
-export function useLocalStorage<T>(key: string, initialValue: T) {
-  const [storedValue, setStoredValue] = useState<T>(() => {
-    try {
-      const item = localStorage.getItem(key);
-      return item ? (JSON.parse(item) as T) : initialValue;
-    } catch (error) {
-      console.error("Error reading localStorage", error);
-      return initialValue;
+export function getItem<T>(key: string): T | undefined {
+  try {
+    const item = window.localStorage.getItem(key);
+    return item ? (JSON.parse(item) as T) : undefined;
+  } catch (error) {
+    alert("Error reading from localStorage: " + error);
+    return undefined;
+  }
+}
+
+export function getItems<T>(key: string): T[] {
+  try {
+    const jsonList = localStorage.getItem(key);
+    if (jsonList) {
+      return JSON.parse(jsonList) as T[];
     }
-  });
-
-  useEffect(() => {
-    try {
-      localStorage.setItem(key, JSON.stringify(storedValue));
-    } catch (error) {
-      console.error("Error saving to localStorage", error);
-    }
-  }, [key, storedValue]);
-
-  return [storedValue, setStoredValue] as const;
+  } catch (error) {
+    alert("Error reading list from localStorage: " + error);
+  }
+  return [];
 }

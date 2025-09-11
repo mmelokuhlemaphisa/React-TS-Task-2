@@ -13,6 +13,7 @@ export default function Footer() {
             border: "1px solid white",
             borderRadius: "50%",
             padding: "20%",
+            
           }}
         />
       </a>

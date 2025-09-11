@@ -23,7 +23,7 @@ export default function Header() {
             textDecoration: "black",
           }}
         >
-          <h3 style={{border:'1px solid black'}}>Link Vault</h3>
+          <h3 style={{border:'1px solid black', padding:"2%"}}>Link Vault</h3>
           <a href="#">Home</a>
           <a href="#">About</a>
           <a href="#">Service</a>

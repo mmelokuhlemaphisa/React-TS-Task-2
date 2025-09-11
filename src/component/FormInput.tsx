@@ -1,7 +1,8 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import Button from "./Button";
 import Linklist from "./Linklist";
 import type { LinkItem } from "./Linklist";
+import { setItem, getItems } from "../utils/LocalStorageFunction"
 
 export default function FormInput() {
   const [url, setUrl] = useState("");
@@ -10,6 +11,16 @@ export default function FormInput() {
   const [tags, setTags] = useState("");
   const [items, setItems] = useState<LinkItem[]>([]);
   const [editIndex, setEditIndex] = useState<number | null>(null);
+
+    useEffect(() => {
+      const saved = getItems<LinkItem>("links");
+      setItems(saved);
+    }, []);
+
+    // Save whenever items change
+    useEffect(() => {
+      setItem("links", items);
+    }, [items]);
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
@@ -43,7 +54,7 @@ export default function FormInput() {
   const handleDelete = (index: number) => {
     if (window.confirm("Are you sure you want to delete this link?")) {
       setItems(items.filter((_, i) => i !== index));
-      alert("Link delete successfully!");
+      alert("Link deleted successfully!");
     }
   };
 
@@ -71,9 +82,9 @@ export default function FormInput() {
           border: "1px solid black",
           borderRadius: "2%",
           marginTop: "5%",
-          marginLeft: "2%",
+          marginLeft: "5%",
           padding: "3%",
-          width: "50%",
+          width: "100%",
         }}
       >
         <h3 style={{ textAlign: "center" }}>Add Links</h3>
@@ -81,10 +92,11 @@ export default function FormInput() {
         <form
           onSubmit={handleSubmit}
           style={{
+           
             marginTop: "6%",
             height: "41vh",
             display: "flex",
-            flexDirection: "column",
+            flexDirection:"column",
             marginLeft: "2%",
           }}
         >
@@ -128,7 +140,7 @@ export default function FormInput() {
           <Button name={editIndex !== null ? "Update" : "Save"} color="green" />
         </form>
       </div>
-      <div style={{ width: "50%", height: "48vh", marginTop: "6%" }}>
+      <div style={{ width: "100%", height: "48vh", marginTop: "6%" }}>
         <Linklist items={items} onEdit={handleEdit} onDelete={handleDelete} />
       </div>
     </div>

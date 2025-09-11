@@ -1,11 +1,10 @@
 import React from "react";
 
-
 export interface LinkItem {
   url: string;
   title: string;
   descr: string;
-  tags:string;
+  tags: string;
 }
 
 interface LinkListProps {
@@ -21,12 +20,14 @@ const LinkList: React.FC<LinkListProps> = ({ items, onEdit, onDelete }) => {
       {items.length === 0 ? (
         <p>No items added yet.</p>
       ) : (
-    <table
-    style={{
-    width: "80%",
-    borderCollapse: "collapse",
-    margin: "0 auto",
-    textAlign: "left",
+        <table
+          style={{
+            width: "80%",
+            borderCollapse: "collapse",
+            // margin: "0 auto",
+            marginTop: "2%",
+            marginRight: "10%",
+            textAlign: "left",
           }}
         >
           <thead>
@@ -36,6 +37,9 @@ const LinkList: React.FC<LinkListProps> = ({ items, onEdit, onDelete }) => {
               </th>
               <th style={{ border: "1px solid black", padding: "8px" }}>
                 Description
+              </th>
+              <th style={{ border: "1px solid black", padding: "8px" }}>
+                Tags
               </th>
               <th style={{ border: "1px solid black", padding: "8px" }}>
                 Link (Url)
@@ -55,22 +59,49 @@ const LinkList: React.FC<LinkListProps> = ({ items, onEdit, onDelete }) => {
                   {item.descr}
                 </td>
                 <td style={{ border: "1px solid black", padding: "8px" }}>
-                  <a href={item.url} target="_blank" rel="noreferrer">
+                  {item.tags}
+                </td>
+                <td
+                  style={{
+                    border: "1px solid black",
+                    padding: "8px",
+                    maxWidth: "100px",
+                    whiteSpace: "nowrap",
+                    overflow: "hidden",
+                    textOverflow: "ellipsis",
+                  }}
+                >
+                  <a
+                    style={{
+                      width: "200px",
+                      whiteSpace: "nowrap",
+                      overflow: "hidden",
+                      textOverflow: "ellipsis",
+                    }}
+                    href={item.url}
+                    target="_blank"
+                    rel="noreferrer"
+                  >
                     {item.url}
                   </a>
                 </td>
-                <td style={{ border: "1px solid black", padding: "8px" }}>
+                <td
+                  style={{
+                    border: "1px solid black",
+                    padding: "8px",
+                    justifyContent: "space-between",
+                  }}
+                >
                   <button
                     onClick={() => onEdit(index)}
                     style={{
                       marginRight: "5px",
+
                       background: "grey",
                       color: "white",
                       border: "none",
-                      borderRadius:"30px",
-                      width:"100%",
-                      height:"4vh",
-
+                      borderRadius: "30px",
+                      width: "100%",
                       padding: "5px",
                       cursor: "pointer",
                     }}
@@ -80,12 +111,12 @@ const LinkList: React.FC<LinkListProps> = ({ items, onEdit, onDelete }) => {
                   <button
                     onClick={() => onDelete(index)}
                     style={{
+                      marginTop: "2%",
                       background: "red",
                       color: "white",
                       border: "none",
-                      borderRadius:"30px",
-                      width:"100%",
-                      height:"4vh",
+                      borderRadius: "30px",
+                      width: "100%",
                       padding: "5px",
                       cursor: "pointer",
                     }}
@@ -101,6 +132,5 @@ const LinkList: React.FC<LinkListProps> = ({ items, onEdit, onDelete }) => {
     </div>
   );
 };
-
 
 export default LinkList;

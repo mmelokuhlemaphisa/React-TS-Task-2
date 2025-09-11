@@ -12,7 +12,7 @@ function App() {
       </div>
 
       <div className="container">
-        <div style={{width:"50%"}}>
+        <div style={{width:"100%"}}>
           <FormInput />
         </div>
 
