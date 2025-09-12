@@ -96,6 +96,7 @@ body, #root {
   border-radius: 30px;
   color: white;
 }
+
 .forminput-container {
   display: flex;
   flex-direction: row;
@@ -107,7 +108,7 @@ body, #root {
 .form-box {
   border: 1px solid black;
   border-radius: 8px;
-  padding: 3%;
+  padding: 5%;
   width: 100%;
   margin-top: 5%;
 }
@@ -121,7 +122,12 @@ body, #root {
 
 .list-box {
   width: 100%;
-  margin-top: 6%;
+  margin-top: 3%;
+  
+}
+
+.list-box h3 p{
+  text-align: center;
 }
 
 
@@ -148,12 +154,49 @@ body, #root {
     flex-direction: column;
   }
 
-  .form-box,
-  .list-box {
-    width: 100%;
+  .form-box{
+     width: 100%;
     margin-left: 0;
   }
+
+  .list-box {
+    width: 100%;
+    margin-right: 10%;
+
+  }
+
+
+
+  table tr {
+    display: block;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    padding: 10px;
+    background: #f9f9f9;
+  }
+
+  table td {
+    display: block;
+    border: none;
+    border-bottom: 1px solid #eee;
+    text-align: left;
+  }
+
+  .table td:last-child {
+    border-bottom: none;
+  }
+
+
+  table td::before {
+    content: attr(data-label);
+    font-weight: bold;
+    display: block;
+    margin-bottom: 5px;
+    color: #333;
+  }
 }
+
 
 
 
