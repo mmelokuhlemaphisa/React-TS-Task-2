@@ -4,12 +4,26 @@ import Linklist from "./Linklist";
 import type { LinkItem } from "./Linklist";
 import { setItem, getItems } from "../utils/LocalStorageFunction";
 
-export default function FormInput() {
+interface Props {
+  items: LinkItem[] | [];
+  setItems: React.Dispatch<React.SetStateAction<LinkItem[]>>;
+  isSearching: boolean;
+  searchResults: LinkItem[] | [];
+  setIsSearching: React.Dispatch<React.SetStateAction<boolean>>;
+  setSearchResults: React.Dispatch<React.SetStateAction<LinkItem[]>>;
+}
+
+export default function FormInput({
+  items,
+  setItems,
+  isSearching,
+  searchResults,
+}: Props) {
   const [url, setUrl] = useState("");
   const [title, setTitle] = useState("");
   const [descr, setDescr] = useState("");
   const [tags, setTags] = useState("");
-  const [items, setItems] = useState<LinkItem[]>([]);
+
   const [editIndex, setEditIndex] = useState<number | null>(null);
 
   useEffect(() => {
@@ -109,10 +123,19 @@ export default function FormInput() {
           <Button name={editIndex !== null ? "Update" : "Save"} color="green" />
         </form>
       </div>
-
-      <div className="list-box">
-        <Linklist items={items} onEdit={handleEdit} onDelete={handleDelete} />
-      </div>
+      {isSearching ? (
+        <div className="list-box">
+          <Linklist
+            items={searchResults}
+            onEdit={handleEdit}
+            onDelete={handleDelete}
+          />
+        </div>
+      ) : (
+        <div className="list-box">
+          <Linklist items={items} onEdit={handleEdit} onDelete={handleDelete} />
+        </div>
+      )}
     </div>
   );
 }

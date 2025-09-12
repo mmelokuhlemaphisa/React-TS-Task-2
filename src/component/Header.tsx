@@ -1,8 +1,24 @@
 import React from "react";
 import Search from "./SearchBar";
+import type { LinkItem } from "./Linklist";
 
+interface Props {
+  items: LinkItem[] | [];
+  setItems: React.Dispatch<React.SetStateAction<LinkItem[]>>;
+  isSearching: boolean;
+  searchResults: LinkItem[] | [];
+  setIsSearching: React.Dispatch<React.SetStateAction<boolean>>;
+  setSearchResults: React.Dispatch<React.SetStateAction<LinkItem[]>>;
+}
 
-export default function Header() {
+export default function Header({
+  items,
+  setItems,
+  setIsSearching,
+  isSearching,
+  setSearchResults,
+  searchResults,
+}: Props) {
   return (
     <div id="head" className="header-container">
       <div>
@@ -16,7 +32,12 @@ export default function Header() {
       </div>
 
       <div className="search-box">
-        <Search />
+        <Search
+          items={items}
+          setItems={setItems}
+          setIsSearching={setIsSearching}
+          setSearchResults={setSearchResults}
+        />
       </div>
     </div>
   );

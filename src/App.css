@@ -123,11 +123,6 @@ body, #root {
 .list-box {
   width: 100%;
   margin-top: 3%;
-  
-}
-
-.list-box h3 p{
-  text-align: center;
 }
 
 
@@ -154,18 +149,11 @@ body, #root {
     flex-direction: column;
   }
 
-  .form-box{
-     width: 100%;
-    margin-left: 0;
-  }
-
+  .form-box,
   .list-box {
     width: 100%;
-    margin-right: 10%;
-
+    margin-left: 0;
   }
-
-
 
   table tr {
     display: block;
@@ -173,34 +161,26 @@ body, #root {
     border: 1px solid #ccc;
     border-radius: 8px;
     padding: 10px;
-    background: #f9f9f9;
   }
 
   table td {
     display: block;
+    text-align: left;
     border: none;
     border-bottom: 1px solid #eee;
-    text-align: left;
   }
 
-  .table td:last-child {
+  table td:last-child {
     border-bottom: none;
   }
 
-
   table td::before {
-    content: attr(data-label);
+    content: attr(data-label); /* use table headers as labels */
     font-weight: bold;
     display: block;
     margin-bottom: 5px;
-    color: #333;
   }
 }
-
-
-
-
-
 
  .search-container {
       display: flex;

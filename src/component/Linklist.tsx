@@ -92,7 +92,7 @@ const LinkList: React.FC<LinkListProps> = ({ items, onEdit, onDelete }) => {
                     padding: "8px",
                     wordWrap: "break-word",
                     wordBreak: "break-word",
-                    whiteSpace: "normal", // 👈 allows wrapping
+                    whiteSpace: "normal", 
                   }}
                 >
                   {item.descr}
@@ -104,7 +104,7 @@ const LinkList: React.FC<LinkListProps> = ({ items, onEdit, onDelete }) => {
                   style={{
                     border: "1px solid black",
                     padding: "8px",
-                    whiteSpace: "normal", // 👈 allows wrapping
+                    whiteSpace: "normal", 
                     wordWrap: "break-word",
                     wordBreak: "break-all",
                     overflowWrap: "break-word",
