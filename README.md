@@ -31,6 +31,8 @@ It is a modern, responsive web app that leverages **local storage** for persiste
 * **Button.tsx** → Reusable button component.
 * **LocalStorageFunction.ts** → Utility functions for saving and retrieving data.
 
+* Figma Link(https://www.figma.com/design/sFHDvUvPrFYcBIXzdfJTYU/links-vault?node-id=10-2&t=zzN95JBi8s8AfdSs-1)
+
 # Steps Taken to Build the React App
 
 1. **Set up React Project**
