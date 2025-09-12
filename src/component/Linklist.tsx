@@ -15,7 +15,7 @@ interface LinkListProps {
 
 const LinkList: React.FC<LinkListProps> = ({ items, onEdit, onDelete }) => {
   return (
-    <div style={{ marginTop: "5%", marginLeft: "10%", width: "100%" }}>
+    <div style={{ marginTop: "5%", width: "100%" }}>
       <h3 >Saved Links</h3>
       {items.length === 0 ? (
         <p>No items added yet.</p>

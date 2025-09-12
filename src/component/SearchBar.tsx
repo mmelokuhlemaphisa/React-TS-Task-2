@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 import { FaSearch } from "react-icons/fa";
 import type { LinkItem } from "./Linklist";
 
@@ -15,7 +15,6 @@ export default function SearchBar({
   setSearchResults,
   setIsSearching,
 }: Props) {
-  // useEffect(() => {}, [set]);
   const [input, setInput] = useState<string>("");
   function search() {
     const lowerTerm = input.toLowerCase();
@@ -35,7 +34,9 @@ export default function SearchBar({
         className="search-input"
         placeholder="Search..."
         value={input}
-        onChange={(e) => setInput(e.target.value)}
+        onChange={(e) => {
+          setInput(e.target.value), search
+        }}
       />
       <button type="submit" className="search-button" onClick={search}>
         <FaSearch

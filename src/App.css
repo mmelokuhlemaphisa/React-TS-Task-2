@@ -7,6 +7,7 @@ html,
 body, #root {
   width: 100%;
   height: 100%;
+  font-size: 14px;
 }
 
 #root{
@@ -29,19 +30,20 @@ body, #root {
   display: flex;
   flex-direction: row;
   align-items: center;
-  gap: 20%; 
+ gap: 20%;
   margin-left: 9%;
 }
 
 .nav-bar a {
   text-decoration: none;
   color: black;
-  font-weight: 500;
+  font-weight: bolder;
+  font-size:x-large;
 }
 
 .logo {
   border: 1px solid black;
-  padding: 6px 12px;
+  padding: 7px 17px;
   margin-right: 12px;
 }
 
@@ -111,6 +113,8 @@ body, #root {
   padding: 5%;
   width: 100%;
   margin-top: 5%;
+   font-size: x-large;
+
 }
 
 .form-input {
@@ -123,63 +127,7 @@ body, #root {
 .list-box {
   width: 100%;
   margin-top: 3%;
-}
-
-
-@media (max-width: 768px) {
-
-  .header-container {
-    flex-direction: column;
-    align-items: flex-start;
-    gap: 15px;
-  }
-
-  .nav-bar {
-    flex-direction: column;
-    align-items: flex-start;
-    gap: 10px;
-  }
-
-  .search-box {
-    width: 100%;
-  }
-
-
-  .forminput-container {
-    flex-direction: column;
-  }
-
-  .form-box,
-  .list-box {
-    width: 100%;
-    margin-left: 0;
-  }
-
-  table tr {
-    display: block;
-    margin-bottom: 15px;
-    border: 1px solid #ccc;
-    border-radius: 8px;
-    padding: 10px;
-  }
-
-  table td {
-    display: block;
-    text-align: left;
-    border: none;
-    border-bottom: 1px solid #eee;
-  }
-
-  table td:last-child {
-    border-bottom: none;
-  }
-
-  table td::before {
-    content: attr(data-label); /* use table headers as labels */
-    font-weight: bold;
-    display: block;
-    margin-bottom: 5px;
-  }
+  font-size: x-large;
 }
 
  .search-container {
@@ -220,11 +168,7 @@ body, #root {
 
     }
 
-    a,p{
-      color: black;
-      text-decoration: none;
-     font-size: larger;
-    }
+   
 
   #footer{
   width: 100%;
@@ -232,6 +176,7 @@ body, #root {
   background-color: #4780A2;
   border: 2px solid green;
   margin-top: 20%;
+  font-size: x-large;
 }
 
 #footer{
@@ -243,5 +188,154 @@ body, #root {
 
 #footer a{
   color: white;
+}
+
+
+
+/* =====================
+   📱 Small Phones (max 320px)
+   ===================== */
+@media (max-width: 320px) {
+
+  body{
+    font-size: 14px;
+  }
+  .logo {
+    font-size: 14px;
+    padding: 4px 8px;
+  }
+
+  .search-input{
+    font-size: 12px;
+    padding: 6px;
+
+  }
+
+  .search-button  {
+    padding: 6px 8px;
+  }
+
+  .nav-bar {
+    gap: 5px;
+    font-size: 12px;
+  }
+.nav-bar a{
+  justify-content: flex-start;
+}
+}
+
+/* =====================
+   📱 Large Phones (max 480px)
+   ===================== */
+@media (max-width: 480px) {
+  body{
+    font-size: 14px;
+  }
+  .nav-bar {
+    gap: 8px;
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .search-input {
+    width: 100%;
+  }
+
+  .forminput-container {
+    padding: 3%;
+    flex-direction: column;
+  }
+}
+
+/* =====================
+   📱 Tablets (max 768px)
+   ===================== */
+@media (max-width: 768px) {
+  body{
+    font-size: 14px;
+  }
+
+  .header-container {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 15px;
+  }
+
+  .nav-bar {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .search-box {
+    width: 100%;
+  }
+
+  .forminput-container {
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  .form-box,
+  .list-box {
+    width: 100%;
+  }
+
+  /* Table becomes card-style */
+  table tr {
+    display: block;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    padding: 10px;
+  }
+
+  table td {
+    display: block;
+    text-align: left;
+    border: none;
+    border-bottom: 1px solid #eee;
+  }
+
+  table td:last-child {
+    border-bottom: none;
+  }
+
+  table td::before {
+    content: attr(data-label);
+    font-weight: bold;
+    display: block;
+    margin-bottom: 5px;
+  }
+}
+
+/* =====================
+   💻 Laptops (max 1024px)
+   ===================== */
+@media (max-width: 1024px) {
+  body{
+    font-size: 14px;
+  }
+
+  .forminput-container {
+    flex-direction: column;
+  }
+
+  .form-box,
+  .list-box {
+    width: 100%;
+  }
+}
+
+/* =====================
+   🖥 Desktops (max 1200px)
+   ===================== */
+@media (max-width: 1200px) {
+  body{
+    font-size: 14px;
+  }
+  
+  .forminput-container {
+    gap: 3%;
+  }
 }
 
