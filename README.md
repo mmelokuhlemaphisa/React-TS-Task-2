@@ -15,6 +15,13 @@ It is a modern, responsive web app that leverages **local storage** for persiste
 * **Modern UI Design**: Clean, minimal, and intuitive interface.
 
 
+## 🛠️ Tech Stack
+- **React (TypeScript)**
+- **CSS3 (Media Queries for responsiveness)**
+- **React Icons** (`react-icons/fa`)
+- **Local Storage API**
+  
+
 # Main Components
 
 * **Header.tsx** → Navigation bar and search input.
@@ -27,9 +34,22 @@ It is a modern, responsive web app that leverages **local storage** for persiste
 # Steps Taken to Build the React App
 
 1. **Set up React Project**
-   ```bash
-   npm create vite@latest
-   Project name: link-vault
-   cd link-vault
-   npm install
-   npm run dev
+   * npm create vite@latest
+   * Project name: React-TS-Task-2
+   * cd link-vault
+   * npm install
+   * npm run dev
+
+# How to Clone and Run This Project steps
+
+1. Open vs code.
+2. On welcome page click on Clone Git repository.
+3. Past the repository URL (https://github.com/mmelokuhlemaphisa/Task8-1-UI-Challenge.git) then press enter.
+4. Choose a local folder where you want to save project.
+5. Click Open.
+6. Use Terminal to install npm and run dev
+   * npm install
+  * npm run dev
+
+
+
