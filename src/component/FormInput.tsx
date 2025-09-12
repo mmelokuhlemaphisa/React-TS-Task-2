@@ -97,6 +97,7 @@ export default function FormInput({
           <input
             type="text"
             id="title"
+            placeholder="Enter link title"
             value={title}
             onChange={(e) => setTitle(e.target.value)}
             required
@@ -106,6 +107,7 @@ export default function FormInput({
           <input
             type="text"
             id="descr"
+            placeholder="Enter link description"
             value={descr}
             onChange={(e) => setDescr(e.target.value)}
             required
@@ -115,6 +117,7 @@ export default function FormInput({
           <input
             type="text"
             id="tags"
+            placeholder="Add tags"
             value={tags}
             onChange={(e) => setTags(e.target.value)}
             required

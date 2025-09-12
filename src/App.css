@@ -128,6 +128,7 @@ body, #root {
   width: 100%;
   margin-top: 3%;
   font-size: x-large;
+  overflow-x: auto;
 }
 
  .search-container {
@@ -192,9 +193,7 @@ body, #root {
 
 
 
-/* =====================
-   📱 Small Phones (max 320px)
-   ===================== */
+
 @media (max-width: 320px) {
 
   body{
@@ -211,6 +210,20 @@ body, #root {
 
   }
 
+    .forminput-container {
+    padding: 3%;
+    flex-direction: column;
+    font-size: 14px;
+ width: 100%;
+  }
+.list-box{
+    padding: 3%;
+    flex-direction: column;
+    font-size: 14px;
+ width: 100%;
+ overflow-x: auto;
+}
+
   .search-button  {
     padding: 6px 8px;
   }
@@ -224,9 +237,7 @@ body, #root {
 }
 }
 
-/* =====================
-   📱 Large Phones (max 480px)
-   ===================== */
+
 @media (max-width: 480px) {
   body{
     font-size: 14px;
@@ -242,14 +253,42 @@ body, #root {
   }
 
   .forminput-container {
-    padding: 3%;
+    /* padding: 3%; */
     flex-direction: column;
+    font-size: 14px;
+ width: 100%;
+  }
+
+  
+  table tr {
+    display: block;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    padding: 10px;
+    font-size: 14px;
+  }
+
+  table td {
+    display: block;
+    text-align: left;
+    border: none;
+    border-bottom: 1px solid #eee;
+  }
+
+  table td:last-child {
+    border-bottom: none;
+  }
+
+  table td::before {
+    content: attr(data-label);
+    font-weight: bold;
+    display: block;
+    margin-bottom: 5px;
   }
 }
 
-/* =====================
-   📱 Tablets (max 768px)
-   ===================== */
+
 @media (max-width: 768px) {
   body{
     font-size: 14px;
@@ -264,6 +303,8 @@ body, #root {
   .nav-bar {
     flex-direction: column;
     gap: 10px;
+    align-items: flex-start;
+    font-size: 14px;
   }
 
   .search-box {
@@ -280,7 +321,7 @@ body, #root {
     width: 100%;
   }
 
-  /* Table becomes card-style */
+ 
   table tr {
     display: block;
     margin-bottom: 15px;
@@ -308,9 +349,7 @@ body, #root {
   }
 }
 
-/* =====================
-   💻 Laptops (max 1024px)
-   ===================== */
+
 @media (max-width: 1024px) {
   body{
     font-size: 14px;
@@ -326,9 +365,6 @@ body, #root {
   }
 }
 
-/* =====================
-   🖥 Desktops (max 1200px)
-   ===================== */
 @media (max-width: 1200px) {
   body{
     font-size: 14px;

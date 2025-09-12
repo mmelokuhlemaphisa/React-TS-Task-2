@@ -16,9 +16,11 @@ interface LinkListProps {
 const LinkList: React.FC<LinkListProps> = ({ items, onEdit, onDelete }) => {
   return (
     <div style={{ marginTop: "5%", width: "100%" }}>
-      <h3 >Saved Links</h3>
+      <h3>Saved Links</h3>
       {items.length === 0 ? (
-        <p>No items added yet.</p>
+        <p>
+          No links found. <br /> Add your first link using the form provided.
+        </p>
       ) : (
         <table
           className="table"
@@ -36,12 +38,23 @@ const LinkList: React.FC<LinkListProps> = ({ items, onEdit, onDelete }) => {
               <th
                 style={{
                   border: "1px solid black",
+                  padding: "8px",
+                  width: "20%",
+                }}
+              >
+                Link (Url)
+              </th>
+
+              <th
+                style={{
+                  border: "1px solid black",
                   padding: "10px",
                   width: "15%",
                 }}
               >
                 Title
               </th>
+
               <th
                 style={{
                   border: "1px solid black",
@@ -60,15 +73,7 @@ const LinkList: React.FC<LinkListProps> = ({ items, onEdit, onDelete }) => {
               >
                 Tags
               </th>
-              <th
-                style={{
-                  border: "1px solid black",
-                  padding: "8px",
-                  width: "20%",
-                }}
-              >
-                Link (Url)
-              </th>
+
               <th
                 style={{
                   border: "1px solid black",
@@ -83,28 +88,11 @@ const LinkList: React.FC<LinkListProps> = ({ items, onEdit, onDelete }) => {
           <tbody>
             {items.map((item, index) => (
               <tr key={index}>
-                <td style={{ border: "1px solid black", padding: "8px" }}>
-                  {item.title}
-                </td>
                 <td
                   style={{
                     border: "1px solid black",
                     padding: "8px",
-                    wordWrap: "break-word",
-                    wordBreak: "break-word",
-                    whiteSpace: "normal", 
-                  }}
-                >
-                  {item.descr}
-                </td>
-                <td style={{ border: "1px solid black", padding: "8px" }}>
-                  {item.tags}
-                </td>
-                <td
-                  style={{
-                    border: "1px solid black",
-                    padding: "8px",
-                    whiteSpace: "normal", 
+                    whiteSpace: "normal",
                     wordWrap: "break-word",
                     wordBreak: "break-all",
                     overflowWrap: "break-word",
@@ -125,6 +113,25 @@ const LinkList: React.FC<LinkListProps> = ({ items, onEdit, onDelete }) => {
                     {item.url}
                   </a>
                 </td>
+                <td style={{ border: "1px solid black", padding: "8px" }}>
+                  {item.title}
+                </td>
+
+                <td
+                  style={{
+                    border: "1px solid black",
+                    padding: "8px",
+                    wordWrap: "break-word",
+                    wordBreak: "break-word",
+                    whiteSpace: "normal",
+                  }}
+                >
+                  {item.descr}
+                </td>
+                <td style={{ border: "1px solid black", padding: "8px" }}>
+                  {item.tags}
+                </td>
+
                 <td
                   style={{
                     border: "1px solid black",
