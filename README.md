@@ -44,7 +44,7 @@ It is a modern, responsive web app that leverages **local storage** for persiste
 
 1. Open vs code.
 2. On welcome page click on Clone Git repository.
-3. Past the repository URL (https://github.com/mmelokuhlemaphisa/Task8-1-UI-Challenge.git) then press enter.
+3. Past the repository URL (https://github.com/mmelokuhlemaphisa/React-TS-Task-2t) then press enter.
 4. Choose a local folder where you want to save project.
 5. Click Open.
 6. Use Terminal to install npm and run dev
