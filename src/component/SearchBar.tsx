@@ -22,7 +22,8 @@ export default function SearchBar({
       (b) =>
         b.title.toLowerCase().includes(lowerTerm) ||
         b.descr.toLowerCase().includes(lowerTerm) ||
-        b.url.toLowerCase().includes(lowerTerm)
+        b.url.toLowerCase().includes(lowerTerm) ||
+         b.tags.toLowerCase().includes(lowerTerm)
     );
     setSearchResults(results);
     setIsSearching(true);
