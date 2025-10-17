@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import Button from "./Button";
 import Linklist from "./Linklist";
 import type { LinkItem } from "./Linklist";
-import { setItem, getItems } from "../utils/LocalStorageFunction";
+import { setItem } from "../utils/LocalStorageFunction";
 
 interface Props {
   items: LinkItem[] | [];
@@ -25,11 +25,6 @@ export default function FormInput({
   const [tags, setTags] = useState("");
 
   const [editIndex, setEditIndex] = useState<number | null>(null);
-
-  useEffect(() => {
-    const saved = getItems<LinkItem>("links");
-    setItems(saved);
-  }, []);
 
   useEffect(() => {
     setItem("links", items);

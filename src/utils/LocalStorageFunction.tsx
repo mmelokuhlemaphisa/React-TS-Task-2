@@ -18,7 +18,7 @@ export function getItem<T>(key: string): T | undefined {
 
 export function getItems<T>(key: string): T[] {
   try {
-    const jsonList = localStorage.getItem(key);
+    const jsonList = window.localStorage.getItem(key);
     if (jsonList) {
       return JSON.parse(jsonList) as T[];
     }

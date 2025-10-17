@@ -42,16 +42,31 @@ It is a modern, responsive web app that leverages **local storage** for persiste
    * npm install
    * npm run dev
 
-# How to Clone and Run This Project steps
+### How to Clone and Run This Project
 
-1. Open vs code.
-2. On welcome page click on Clone Git repository.
-3. Past the repository URL (https://github.com/mmelokuhlemaphisa/React-TS-Task-2t) then press enter.
-4. Choose a local folder where you want to save project.
-5. Click Open.
-6. Use Terminal to install npm and run dev
-   * npm install
-  * npm run dev
+1. **Open your preferred terminal** (e.g., VS Code Terminal, Command Prompt, PowerShell, macOS Terminal, or Linux shell).
+2. **Clone the repository** by running the command below:
+
+   ```
+   git clone https://github.com/mmelokuhlemaphisa/React-TS-Task-2t
+   ```
+3. **Navigate into the project folder:**
+
+   ```
+   cd React-TS-Task-2t
+   ```
+4. **Install dependencies:**
+
+   ```
+   npm install
+   ```
+5. **Run the development server:**
+
+   ```
+   npm run dev
+   ```
+6. **Open the project in your code editor** (e.g., VS Code) or go to the URL displayed in the terminal (usually `http://localhost:5173`) to view it in your browser.
+
 
 
 

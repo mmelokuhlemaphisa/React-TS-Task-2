@@ -5,9 +5,13 @@ import FormInput from "./component/FormInput";
 // import Linklist from "./component/Linklist";
 import { useState } from "react";
 import type { LinkItem } from "./component/Linklist";
+import { getItems } from "./utils/LocalStorageFunction";
 
 function App() {
-  const [items, setItems] = useState<LinkItem[]>([]);
+  const [items, setItems] = useState<LinkItem[]>(() => {
+    // Initialize with data from localStorage
+    return getItems<LinkItem>("links");
+  });
   const [isSearching, setIsSearching] = useState<boolean>(false);
   const [searchResults, setSearchResults] = useState<LinkItem[] | []>([]);
   return (
