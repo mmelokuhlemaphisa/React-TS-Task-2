@@ -38,7 +38,7 @@ It is a modern, responsive web app that leverages **local storage** for persiste
 1. **Set up React Project**
    * npm create vite@latest
    * Project name: React-TS-Task-2
-   * cd link-vault
+   * cd React-TS-Task-2
    * npm install
    * npm run dev
 
