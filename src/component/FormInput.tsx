@@ -127,11 +127,17 @@ export default function FormInput({
             items={searchResults}
             onEdit={handleEdit}
             onDelete={handleDelete}
+            editIndex={editIndex}
           />
         </div>
       ) : (
         <div className="list-box">
-          <Linklist items={items} onEdit={handleEdit} onDelete={handleDelete} />
+          <Linklist
+            items={items}
+            onEdit={handleEdit}
+            onDelete={handleDelete}
+            editIndex={editIndex}
+          />
         </div>
       )}
     </div>

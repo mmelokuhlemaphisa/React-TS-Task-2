@@ -11,169 +11,72 @@ interface LinkListProps {
   items: LinkItem[];
   onEdit: (index: number) => void;
   onDelete: (index: number) => void;
+  editIndex: number | null;
 }
 
-const LinkList: React.FC<LinkListProps> = ({ items, onEdit, onDelete }) => {
+const LinkList: React.FC<LinkListProps> = ({
+  items,
+  onEdit,
+  onDelete,
+  editIndex,
+}) => {
   return (
-    <div style={{ marginTop: "5%", width: "100%" }}>
+    <div className="list-box">
       <h3>Saved Links</h3>
+
       {items.length === 0 ? (
         <p>
           No links found. <br /> Add your first link using the form provided.
         </p>
       ) : (
-        <table
-          className="table"
-          style={{
-            borderCollapse: "collapse",
-            marginTop: "5%",
-            marginRight: "10%",
-            textAlign: "left",
-            tableLayout: "auto",
-            padding: "5%",
-          }}
-        >
-          <thead>
-            <tr>
-              <th
-                style={{
-                  border: "1px solid black",
-                  padding: "8px",
-                  width: "20%",
-                }}
-              >
-                Link (Url)
-              </th>
-
-              <th
-                style={{
-                  border: "1px solid black",
-                  padding: "10px",
-                  width: "15%",
-                }}
-              >
-                Title
-              </th>
-
-              <th
-                style={{
-                  border: "1px solid black",
-                  padding: "8px",
-                  width: "35%",
-                }}
-              >
-                Description
-              </th>
-              <th
-                style={{
-                  border: "1px solid black",
-                  padding: "8px",
-                  width: "15%",
-                }}
-              >
-                Tags
-              </th>
-
-              <th
-                style={{
-                  border: "1px solid black",
-                  padding: "8px",
-                  width: "15%",
-                }}
-              >
-                Actions
-              </th>
-            </tr>
-          </thead>
-          <tbody>
-            {items.map((item, index) => (
-              <tr key={index}>
-                <td
-                  style={{
-                    border: "1px solid black",
-                    padding: "8px",
-                    whiteSpace: "normal",
-                    wordWrap: "break-word",
-                    wordBreak: "break-all",
-                    overflowWrap: "break-word",
-                  }}
-                >
-                  <a
-                    style={{
-                      display: "inline-block",
-                      maxWidth: "100%",
-                      overflowWrap: "break-word",
-                      wordBreak: "break-all",
-                      color: "blue",
-                    }}
-                    href={item.url}
-                    target="_blank"
-                    rel="noreferrer"
-                  >
-                    {item.url}
-                  </a>
-                </td>
-                <td style={{ border: "1px solid black", padding: "8px" }}>
-                  {item.title}
-                </td>
-
-                <td
-                  style={{
-                    border: "1px solid black",
-                    padding: "8px",
-                    wordWrap: "break-word",
-                    wordBreak: "break-word",
-                    whiteSpace: "normal",
-                  }}
-                >
-                  {item.descr}
-                </td>
-                <td style={{ border: "1px solid black", padding: "8px" }}>
-                  {item.tags}
-                </td>
-
-                <td
-                  style={{
-                    border: "1px solid black",
-                    padding: "8px",
-                    textAlign: "center",
-                    width: "100%",
-                  }}
-                >
-                  <button
-                    onClick={() => onEdit(index)}
-                    style={{
-                      marginBottom: "5px",
-                      background: "grey",
-                      color: "white",
-                      border: "none",
-                      borderRadius: "30px",
-                      width: "90%",
-                      padding: "5px",
-                      cursor: "pointer",
-                    }}
-                  >
-                    Edit
-                  </button>
-                  <button
-                    onClick={() => onDelete(index)}
-                    style={{
-                      background: "red",
-                      color: "white",
-                      border: "none",
-                      borderRadius: "30px",
-                      width: "90%",
-                      padding: "5px",
-                      cursor: "pointer",
-                    }}
-                  >
-                    Delete
-                  </button>
-                </td>
+        <div className="table-container">
+          <table>
+            <thead>
+              <tr>
+                <th>Link (URL)</th>
+                <th>Title</th>
+                <th>Description</th>
+                <th>Tags</th>
+                <th>Actions</th>
               </tr>
-            ))}
-          </tbody>
-        </table>
+            </thead>
+
+            <tbody>
+              {items.map((item, index) => (
+                <tr key={index}>
+                  <td data-label="Link">
+                    <a href={item.url} target="_blank" rel="noreferrer">
+                      {item.url}
+                    </a>
+                  </td>
+
+                  <td data-label="Title">{item.title}</td>
+
+                  <td data-label="Description">{item.descr}</td>
+
+                  <td data-label="Tags">{item.tags}</td>
+
+                  {/* ACTIONS */}
+                  <td data-label="Actions">
+                    <div className="actions">
+                      <button className="btn" onClick={() => onEdit(index)}>
+                        {editIndex === index ? "Update" : "Edit"}
+                      </button>
+
+                      <button
+                        className="btn"
+                        style={{ background: "red" }}
+                        onClick={() => onDelete(index)}
+                      >
+                        Delete
+                      </button>
+                    </div>
+                  </td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
+        </div>
       )}
     </div>
   );
